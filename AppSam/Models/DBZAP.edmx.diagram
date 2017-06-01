@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ae55bd568d134efa932e576afe5fe423" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="AppSamModel.catalogo" Width="1.5" PointX="13.5" PointY="20.375" />
+        <EntityTypeShape EntityType="AppSamModel.catalogobitacora" Width="1.5" PointX="10.5" PointY="21.375" />
+        <EntityTypeShape EntityType="AppSamModel.colores" Width="1.5" PointX="8.25" PointY="18.125" />
+        <EntityTypeShape EntityType="AppSamModel.estatus" Width="1.5" PointX="0.75" PointY="16.5" />
+        <EntityTypeShape EntityType="AppSamModel.MenuTitulo" Width="1.5" PointX="0.75" PointY="32.125" />
+        <EntityTypeShape EntityType="AppSamModel.modelos" Width="1.5" PointX="8.25" PointY="22.125" />
+        <EntityTypeShape EntityType="AppSamModel.Pantallas" Width="1.5" PointX="3" PointY="31.75" />
+        <EntityTypeShape EntityType="AppSamModel.talla" Width="1.5" PointX="5.25" PointY="18.125" />
+        <EntityTypeShape EntityType="AppSamModel.tipo" Width="1.5" PointX="5.25" PointY="22.125" />
+        <EntityTypeShape EntityType="AppSamModel.UsuarioAcceso" Width="1.5" PointX="7.5" PointY="26.75" />
+        <EntityTypeShape EntityType="AppSamModel.usuarios" Width="1.5" PointX="3" PointY="25.625" />
+        <EntityTypeShape EntityType="AppSamModel.UsuariosPantallas" Width="1.5" PointX="5.25" PointY="30" />
+        <EntityTypeShape EntityType="AppSamModel.UsuarioToken" Width="1.5" PointX="5.25" PointY="26.125" />
+        <AssociationConnector Association="AppSamModel.FK_catalogo_colores" />
+        <AssociationConnector Association="AppSamModel.FK_catalogo_estatus" />
+        <AssociationConnector Association="AppSamModel.FK_catalogo_modelos" />
+        <AssociationConnector Association="AppSamModel.FK_catalogo_talla" />
+        <AssociationConnector Association="AppSamModel.FK_catalogo_tipo" />
+        <AssociationConnector Association="AppSamModel.FK_catalogo_usuarios" />
+        <AssociationConnector Association="AppSamModel.FK_catalogobitacora_colores" />
+        <AssociationConnector Association="AppSamModel.FK_catalogobitacora_estatus" />
+        <AssociationConnector Association="AppSamModel.FK_catalogobitacora_modelos" />
+        <AssociationConnector Association="AppSamModel.FK_catalogobitacora_talla" />
+        <AssociationConnector Association="AppSamModel.FK_catalogobitacora_tipo" />
+        <AssociationConnector Association="AppSamModel.FK_catalogobitacora_usuarios" />
+        <AssociationConnector Association="AppSamModel.FK_colores_estatus" />
+        <AssociationConnector Association="AppSamModel.FK_colores_usuarios" />
+        <AssociationConnector Association="AppSamModel.FK_modelos_estatus" />
+        <AssociationConnector Association="AppSamModel.FK_talla_estatus" />
+        <AssociationConnector Association="AppSamModel.FK_tipo_estatus" />
+        <AssociationConnector Association="AppSamModel.FK_usuarios_estatus" />
+        <AssociationConnector Association="AppSamModel.FK_usuarios_estatus1" />
+        <AssociationConnector Association="AppSamModel.FK_UsuarioToken_estatus" />
+        <AssociationConnector Association="AppSamModel.FK_Pantallas_MenuTitulo" />
+        <AssociationConnector Association="AppSamModel.FK_modelos_usuarios" />
+        <AssociationConnector Association="AppSamModel.FK_UsuariosPantallas_Pantallas" />
+        <AssociationConnector Association="AppSamModel.FK_talla_usuarios" />
+        <AssociationConnector Association="AppSamModel.FK_tipo_usuarios" />
+        <AssociationConnector Association="AppSamModel.FK_UsuarioAcceso_usuarios" />
+        <AssociationConnector Association="AppSamModel.FK_UsuarioAcceso_UsuarioToken" />
+        <AssociationConnector Association="AppSamModel.FK_UsuariosPantallas_usuarios" />
+        <AssociationConnector Association="AppSamModel.FK_UsuarioToken_usuarios" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

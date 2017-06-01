@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSam", "AppSam\AppSam.csproj", "{C44BDF23-AC0D-4093-B852-F32F65AE638F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasAppSam", "PruebasAppSam\PruebasAppSam.csproj", "{71B0C1FA-0596-4A83-ACCF-38CEF74031E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C44BDF23-AC0D-4093-B852-F32F65AE638F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44BDF23-AC0D-4093-B852-F32F65AE638F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44BDF23-AC0D-4093-B852-F32F65AE638F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44BDF23-AC0D-4093-B852-F32F65AE638F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B0C1FA-0596-4A83-ACCF-38CEF74031E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B0C1FA-0596-4A83-ACCF-38CEF74031E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B0C1FA-0596-4A83-ACCF-38CEF74031E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B0C1FA-0596-4A83-ACCF-38CEF74031E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://appzapatos.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AppSam\\AppSam.csproj
+		SccProjectName1 = AppSam
+		SccLocalPath1 = AppSam
+		SccProjectUniqueName2 = PruebasAppSam\\PruebasAppSam.csproj
+		SccProjectName2 = PruebasAppSam
+		SccLocalPath2 = PruebasAppSam
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AppSamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="catalogo">
+          <Key>
+            <PropertyRef Name="CatalogoId" />
+          </Key>
+          <Property Name="CatalogoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModelosId" Type="int" Nullable="false" />
+          <Property Name="TallaId" Type="int" Nullable="false" />
+          <Property Name="TipoId" Type="int" Nullable="false" />
+          <Property Name="ColoId" Type="int" Nullable="false" />
+          <Property Name="Docenas" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="catalogobitacora">
+          <Key>
+            <PropertyRef Name="CatalogoBitacoraId" />
+          </Key>
+          <Property Name="CatalogoBitacoraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModelosId" Type="int" Nullable="false" />
+          <Property Name="TallaId" Type="int" Nullable="false" />
+          <Property Name="TipoId" Type="int" Nullable="false" />
+          <Property Name="ColorId" Type="int" Nullable="false" />
+          <Property Name="Docenas" Type="int" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="colores">
+          <Key>
+            <PropertyRef Name="ColoresId" />
+          </Key>
+          <Property Name="ColoresId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estatus">
+          <Key>
+            <PropertyRef Name="EstatusId" />
+          </Key>
+          <Property Name="EstatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuTitulo">
+          <Key>
+            <PropertyRef Name="MenuTituloId" />
+          </Key>
+          <Property Name="MenuTituloId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Icono" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="modelos">
+          <Key>
+            <PropertyRef Name="ModelosId" />
+          </Key>
+          <Property Name="ModelosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pantallas">
+          <Key>
+            <PropertyRef Name="PantallaId" />
+          </Key>
+          <Property Name="PantallaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuTituloId" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DireccionPantalla" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Icono" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="talla">
+          <Key>
+            <PropertyRef Name="TallaId" />
+          </Key>
+          <Property Name="TallaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="usuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipo">
+          <Key>
+            <PropertyRef Name="TipoId" />
+          </Key>
+          <Property Name="TipoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+          <Property Name="usuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioAcceso">
+          <Key>
+            <PropertyRef Name="UsuarioAccesoId" />
+          </Key>
+          <Property Name="UsuarioAccesoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="UsuarioTokenId" Type="int" Nullable="false" />
+          <Property Name="FechaIngreso" Type="date" Nullable="false" />
+          <Property Name="HoraIngreso" Type="time" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="usuariosId" />
+          </Key>
+          <Property Name="usuariosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Paterno" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Materno" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="llave" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="pass" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuariosPantallas">
+          <Key>
+            <PropertyRef Name="UsuarioPantallaId" />
+          </Key>
+          <Property Name="UsuarioPantallaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="PantallaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioToken">
+          <Key>
+            <PropertyRef Name="UsuarioTokenId" />
+          </Key>
+          <Property Name="UsuarioTokenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IP" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="Token" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="EstatusId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_catalogo_colores">
+          <End Role="colores" Type="Self.colores" Multiplicity="1" />
+          <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colores">
+              <PropertyRef Name="ColoresId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="ColoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_estatus">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_modelos">
+          <End Role="modelos" Type="Self.modelos" Multiplicity="1" />
+          <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelos">
+              <PropertyRef Name="ModelosId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="ModelosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_talla">
+          <End Role="talla" Type="Self.talla" Multiplicity="1" />
+          <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="talla">
+              <PropertyRef Name="TallaId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_tipo">
+          <End Role="tipo" Type="Self.tipo" Multiplicity="1" />
+          <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="TipoId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="TipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="catalogo" Type="Self.catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_colores">
+          <End Role="colores" Type="Self.colores" Multiplicity="1" />
+          <End Role="catalogobitacora" Type="Self.catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colores">
+              <PropertyRef Name="ColoresId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_estatus">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="catalogobitacora" Type="Self.catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_modelos">
+          <End Role="modelos" Type="Self.modelos" Multiplicity="1" />
+          <End Role="catalogobitacora" Type="Self.catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelos">
+              <PropertyRef Name="ModelosId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="ModelosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_talla">
+          <End Role="talla" Type="Self.talla" Multiplicity="1" />
+          <End Role="catalogobitacora" Type="Self.catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="talla">
+              <PropertyRef Name="TallaId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_tipo">
+          <End Role="tipo" Type="Self.tipo" Multiplicity="1" />
+          <End Role="catalogobitacora" Type="Self.catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="TipoId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="TipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="catalogobitacora" Type="Self.catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_colores_estatus">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="colores" Type="Self.colores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="colores">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_colores_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="colores" Type="Self.colores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="colores">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_modelos_estatus">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="modelos" Type="Self.modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="modelos">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_modelos_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="modelos" Type="Self.modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="modelos">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pantallas_MenuTitulo">
+          <End Role="MenuTitulo" Type="Self.MenuTitulo" Multiplicity="1" />
+          <End Role="Pantallas" Type="Self.Pantallas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuTitulo">
+              <PropertyRef Name="MenuTituloId" />
+            </Principal>
+            <Dependent Role="Pantallas">
+              <PropertyRef Name="MenuTituloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_talla_estatus">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="talla" Type="Self.talla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="talla">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_talla_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="talla" Type="Self.talla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="talla">
+              <PropertyRef Name="usuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tipo_estatus">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="tipo" Type="Self.tipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="tipo">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tipo_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="tipo" Type="Self.tipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="tipo">
+              <PropertyRef Name="usuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAcceso_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="UsuarioAcceso" Type="Self.UsuarioAcceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="UsuarioAcceso">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAcceso_UsuarioToken">
+          <End Role="UsuarioToken" Type="Self.UsuarioToken" Multiplicity="1" />
+          <End Role="UsuarioAcceso" Type="Self.UsuarioAcceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsuarioToken">
+              <PropertyRef Name="UsuarioTokenId" />
+            </Principal>
+            <Dependent Role="UsuarioAcceso">
+              <PropertyRef Name="UsuarioTokenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarios_estatus">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarios_estatus1">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuariosPantallas_Pantallas">
+          <End Role="Pantallas" Type="Self.Pantallas" Multiplicity="1" />
+          <End Role="UsuariosPantallas" Type="Self.UsuariosPantallas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pantallas">
+              <PropertyRef Name="PantallaId" />
+            </Principal>
+            <Dependent Role="UsuariosPantallas">
+              <PropertyRef Name="PantallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuariosPantallas_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="UsuariosPantallas" Type="Self.UsuariosPantallas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="UsuariosPantallas">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioToken_estatus">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="1" />
+          <End Role="UsuarioToken" Type="Self.UsuarioToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="UsuarioToken">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioToken_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="UsuarioToken" Type="Self.UsuarioToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="UsuarioToken">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AppSamModelStoreContainer">
+          <EntitySet Name="catalogo" EntityType="Self.catalogo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catalogobitacora" EntityType="Self.catalogobitacora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="colores" EntityType="Self.colores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estatus" EntityType="Self.estatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuTitulo" EntityType="Self.MenuTitulo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="modelos" EntityType="Self.modelos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pantallas" EntityType="Self.Pantallas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="talla" EntityType="Self.talla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipo" EntityType="Self.tipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioAcceso" EntityType="Self.UsuarioAcceso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuariosPantallas" EntityType="Self.UsuariosPantallas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioToken" EntityType="Self.UsuarioToken" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_catalogo_colores" Association="Self.FK_catalogo_colores">
+            <End Role="colores" EntitySet="colores" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_estatus" Association="Self.FK_catalogo_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_modelos" Association="Self.FK_catalogo_modelos">
+            <End Role="modelos" EntitySet="modelos" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_talla" Association="Self.FK_catalogo_talla">
+            <End Role="talla" EntitySet="talla" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_tipo" Association="Self.FK_catalogo_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_usuarios" Association="Self.FK_catalogo_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_colores" Association="Self.FK_catalogobitacora_colores">
+            <End Role="colores" EntitySet="colores" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_estatus" Association="Self.FK_catalogobitacora_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_modelos" Association="Self.FK_catalogobitacora_modelos">
+            <End Role="modelos" EntitySet="modelos" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_talla" Association="Self.FK_catalogobitacora_talla">
+            <End Role="talla" EntitySet="talla" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_tipo" Association="Self.FK_catalogobitacora_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_usuarios" Association="Self.FK_catalogobitacora_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_colores_estatus" Association="Self.FK_colores_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="colores" EntitySet="colores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_colores_usuarios" Association="Self.FK_colores_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="colores" EntitySet="colores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_modelos_estatus" Association="Self.FK_modelos_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="modelos" EntitySet="modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_modelos_usuarios" Association="Self.FK_modelos_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="modelos" EntitySet="modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pantallas_MenuTitulo" Association="Self.FK_Pantallas_MenuTitulo">
+            <End Role="MenuTitulo" EntitySet="MenuTitulo" />
+            <End Role="Pantallas" EntitySet="Pantallas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_talla_estatus" Association="Self.FK_talla_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="talla" EntitySet="talla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_talla_usuarios" Association="Self.FK_talla_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="talla" EntitySet="talla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tipo_estatus" Association="Self.FK_tipo_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="tipo" EntitySet="tipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tipo_usuarios" Association="Self.FK_tipo_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="tipo" EntitySet="tipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAcceso_usuarios" Association="Self.FK_UsuarioAcceso_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="UsuarioAcceso" EntitySet="UsuarioAcceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAcceso_UsuarioToken" Association="Self.FK_UsuarioAcceso_UsuarioToken">
+            <End Role="UsuarioToken" EntitySet="UsuarioToken" />
+            <End Role="UsuarioAcceso" EntitySet="UsuarioAcceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarios_estatus" Association="Self.FK_usuarios_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarios_estatus1" Association="Self.FK_usuarios_estatus1">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuariosPantallas_Pantallas" Association="Self.FK_UsuariosPantallas_Pantallas">
+            <End Role="Pantallas" EntitySet="Pantallas" />
+            <End Role="UsuariosPantallas" EntitySet="UsuariosPantallas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuariosPantallas_usuarios" Association="Self.FK_UsuariosPantallas_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="UsuariosPantallas" EntitySet="UsuariosPantallas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioToken_estatus" Association="Self.FK_UsuarioToken_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="UsuarioToken" EntitySet="UsuarioToken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioToken_usuarios" Association="Self.FK_UsuarioToken_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="UsuarioToken" EntitySet="UsuarioToken" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AppSamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AppSamEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="catalogo" EntityType="AppSamModel.catalogo" />
+          <EntitySet Name="catalogobitacora" EntityType="AppSamModel.catalogobitacora" />
+          <EntitySet Name="colores" EntityType="AppSamModel.colores" />
+          <EntitySet Name="estatus" EntityType="AppSamModel.estatus" />
+          <EntitySet Name="MenuTitulo" EntityType="AppSamModel.MenuTitulo" />
+          <EntitySet Name="modelos" EntityType="AppSamModel.modelos" />
+          <EntitySet Name="Pantallas" EntityType="AppSamModel.Pantallas" />
+          <EntitySet Name="talla" EntityType="AppSamModel.talla" />
+          <EntitySet Name="tipo" EntityType="AppSamModel.tipo" />
+          <EntitySet Name="UsuarioAcceso" EntityType="AppSamModel.UsuarioAcceso" />
+          <EntitySet Name="usuarios" EntityType="AppSamModel.usuarios" />
+          <EntitySet Name="UsuariosPantallas" EntityType="AppSamModel.UsuariosPantallas" />
+          <EntitySet Name="UsuarioToken" EntityType="AppSamModel.UsuarioToken" />
+          <AssociationSet Name="FK_catalogo_colores" Association="AppSamModel.FK_catalogo_colores">
+            <End Role="colores" EntitySet="colores" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_estatus" Association="AppSamModel.FK_catalogo_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_modelos" Association="AppSamModel.FK_catalogo_modelos">
+            <End Role="modelos" EntitySet="modelos" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_talla" Association="AppSamModel.FK_catalogo_talla">
+            <End Role="talla" EntitySet="talla" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_tipo" Association="AppSamModel.FK_catalogo_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogo_usuarios" Association="AppSamModel.FK_catalogo_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="catalogo" EntitySet="catalogo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_colores" Association="AppSamModel.FK_catalogobitacora_colores">
+            <End Role="colores" EntitySet="colores" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_estatus" Association="AppSamModel.FK_catalogobitacora_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_modelos" Association="AppSamModel.FK_catalogobitacora_modelos">
+            <End Role="modelos" EntitySet="modelos" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_talla" Association="AppSamModel.FK_catalogobitacora_talla">
+            <End Role="talla" EntitySet="talla" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_tipo" Association="AppSamModel.FK_catalogobitacora_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_catalogobitacora_usuarios" Association="AppSamModel.FK_catalogobitacora_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="catalogobitacora" EntitySet="catalogobitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_colores_estatus" Association="AppSamModel.FK_colores_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="colores" EntitySet="colores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_colores_usuarios" Association="AppSamModel.FK_colores_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="colores" EntitySet="colores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_modelos_estatus" Association="AppSamModel.FK_modelos_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="modelos" EntitySet="modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_talla_estatus" Association="AppSamModel.FK_talla_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="talla" EntitySet="talla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tipo_estatus" Association="AppSamModel.FK_tipo_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="tipo" EntitySet="tipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarios_estatus" Association="AppSamModel.FK_usuarios_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarios_estatus1" Association="AppSamModel.FK_usuarios_estatus1">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioToken_estatus" Association="AppSamModel.FK_UsuarioToken_estatus">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="UsuarioToken" EntitySet="UsuarioToken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pantallas_MenuTitulo" Association="AppSamModel.FK_Pantallas_MenuTitulo">
+            <End Role="MenuTitulo" EntitySet="MenuTitulo" />
+            <End Role="Pantallas" EntitySet="Pantallas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_modelos_usuarios" Association="AppSamModel.FK_modelos_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="modelos" EntitySet="modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuariosPantallas_Pantallas" Association="AppSamModel.FK_UsuariosPantallas_Pantallas">
+            <End Role="Pantallas" EntitySet="Pantallas" />
+            <End Role="UsuariosPantallas" EntitySet="UsuariosPantallas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_talla_usuarios" Association="AppSamModel.FK_talla_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="talla" EntitySet="talla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tipo_usuarios" Association="AppSamModel.FK_tipo_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="tipo" EntitySet="tipo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAcceso_usuarios" Association="AppSamModel.FK_UsuarioAcceso_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="UsuarioAcceso" EntitySet="UsuarioAcceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioAcceso_UsuarioToken" Association="AppSamModel.FK_UsuarioAcceso_UsuarioToken">
+            <End Role="UsuarioToken" EntitySet="UsuarioToken" />
+            <End Role="UsuarioAcceso" EntitySet="UsuarioAcceso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuariosPantallas_usuarios" Association="AppSamModel.FK_UsuariosPantallas_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="UsuariosPantallas" EntitySet="UsuariosPantallas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioToken_usuarios" Association="AppSamModel.FK_UsuarioToken_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="UsuarioToken" EntitySet="UsuarioToken" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="catalogo">
+          <Key>
+            <PropertyRef Name="CatalogoId" />
+          </Key>
+          <Property Name="CatalogoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelosId" Type="Int32" Nullable="false" />
+          <Property Name="TallaId" Type="Int32" Nullable="false" />
+          <Property Name="TipoId" Type="Int32" Nullable="false" />
+          <Property Name="ColoId" Type="Int32" Nullable="false" />
+          <Property Name="Docenas" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="colores" Relationship="AppSamModel.FK_catalogo_colores" FromRole="catalogo" ToRole="colores" />
+          <NavigationProperty Name="estatus" Relationship="AppSamModel.FK_catalogo_estatus" FromRole="catalogo" ToRole="estatus" />
+          <NavigationProperty Name="modelos" Relationship="AppSamModel.FK_catalogo_modelos" FromRole="catalogo" ToRole="modelos" />
+          <NavigationProperty Name="talla" Relationship="AppSamModel.FK_catalogo_talla" FromRole="catalogo" ToRole="talla" />
+          <NavigationProperty Name="tipo" Relationship="AppSamModel.FK_catalogo_tipo" FromRole="catalogo" ToRole="tipo" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_catalogo_usuarios" FromRole="catalogo" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="catalogobitacora">
+          <Key>
+            <PropertyRef Name="CatalogoBitacoraId" />
+          </Key>
+          <Property Name="CatalogoBitacoraId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelosId" Type="Int32" Nullable="false" />
+          <Property Name="TallaId" Type="Int32" Nullable="false" />
+          <Property Name="TipoId" Type="Int32" Nullable="false" />
+          <Property Name="ColorId" Type="Int32" Nullable="false" />
+          <Property Name="Docenas" Type="Int32" Nullable="false" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="colores" Relationship="AppSamModel.FK_catalogobitacora_colores" FromRole="catalogobitacora" ToRole="colores" />
+          <NavigationProperty Name="estatus" Relationship="AppSamModel.FK_catalogobitacora_estatus" FromRole="catalogobitacora" ToRole="estatus" />
+          <NavigationProperty Name="modelos" Relationship="AppSamModel.FK_catalogobitacora_modelos" FromRole="catalogobitacora" ToRole="modelos" />
+          <NavigationProperty Name="talla" Relationship="AppSamModel.FK_catalogobitacora_talla" FromRole="catalogobitacora" ToRole="talla" />
+          <NavigationProperty Name="tipo" Relationship="AppSamModel.FK_catalogobitacora_tipo" FromRole="catalogobitacora" ToRole="tipo" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_catalogobitacora_usuarios" FromRole="catalogobitacora" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="colores">
+          <Key>
+            <PropertyRef Name="ColoresId" />
+          </Key>
+          <Property Name="ColoresId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="catalogo" Relationship="AppSamModel.FK_catalogo_colores" FromRole="colores" ToRole="catalogo" />
+          <NavigationProperty Name="catalogobitacora" Relationship="AppSamModel.FK_catalogobitacora_colores" FromRole="colores" ToRole="catalogobitacora" />
+          <NavigationProperty Name="estatus" Relationship="AppSamModel.FK_colores_estatus" FromRole="colores" ToRole="estatus" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_colores_usuarios" FromRole="colores" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="estatus">
+          <Key>
+            <PropertyRef Name="EstatusId" />
+          </Key>
+          <Property Name="EstatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="catalogo" Relationship="AppSamModel.FK_catalogo_estatus" FromRole="estatus" ToRole="catalogo" />
+          <NavigationProperty Name="catalogobitacora" Relationship="AppSamModel.FK_catalogobitacora_estatus" FromRole="estatus" ToRole="catalogobitacora" />
+          <NavigationProperty Name="colores" Relationship="AppSamModel.FK_colores_estatus" FromRole="estatus" ToRole="colores" />
+          <NavigationProperty Name="modelos" Relationship="AppSamModel.FK_modelos_estatus" FromRole="estatus" ToRole="modelos" />
+          <NavigationProperty Name="talla" Relationship="AppSamModel.FK_talla_estatus" FromRole="estatus" ToRole="talla" />
+          <NavigationProperty Name="tipo" Relationship="AppSamModel.FK_tipo_estatus" FromRole="estatus" ToRole="tipo" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_usuarios_estatus" FromRole="estatus" ToRole="usuarios" />
+          <NavigationProperty Name="usuarios1" Relationship="AppSamModel.FK_usuarios_estatus1" FromRole="estatus" ToRole="usuarios" />
+          <NavigationProperty Name="UsuarioToken" Relationship="AppSamModel.FK_UsuarioToken_estatus" FromRole="estatus" ToRole="UsuarioToken" />
+        </EntityType>
+        <EntityType Name="MenuTitulo">
+          <Key>
+            <PropertyRef Name="MenuTituloId" />
+          </Key>
+          <Property Name="MenuTituloId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Icono" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pantallas" Relationship="AppSamModel.FK_Pantallas_MenuTitulo" FromRole="MenuTitulo" ToRole="Pantallas" />
+        </EntityType>
+        <EntityType Name="modelos">
+          <Key>
+            <PropertyRef Name="ModelosId" />
+          </Key>
+          <Property Name="ModelosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="catalogo" Relationship="AppSamModel.FK_catalogo_modelos" FromRole="modelos" ToRole="catalogo" />
+          <NavigationProperty Name="catalogobitacora" Relationship="AppSamModel.FK_catalogobitacora_modelos" FromRole="modelos" ToRole="catalogobitacora" />
+          <NavigationProperty Name="estatus" Relationship="AppSamModel.FK_modelos_estatus" FromRole="modelos" ToRole="estatus" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_modelos_usuarios" FromRole="modelos" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="Pantallas">
+          <Key>
+            <PropertyRef Name="PantallaId" />
+          </Key>
+          <Property Name="PantallaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuTituloId" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DireccionPantalla" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Icono" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MenuTitulo" Relationship="AppSamModel.FK_Pantallas_MenuTitulo" FromRole="Pantallas" ToRole="MenuTitulo" />
+          <NavigationProperty Name="UsuariosPantallas" Relationship="AppSamModel.FK_UsuariosPantallas_Pantallas" FromRole="Pantallas" ToRole="UsuariosPantallas" />
+        </EntityType>
+        <EntityType Name="talla">
+          <Key>
+            <PropertyRef Name="TallaId" />
+          </Key>
+          <Property Name="TallaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="usuarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="catalogo" Relationship="AppSamModel.FK_catalogo_talla" FromRole="talla" ToRole="catalogo" />
+          <NavigationProperty Name="catalogobitacora" Relationship="AppSamModel.FK_catalogobitacora_talla" FromRole="talla" ToRole="catalogobitacora" />
+          <NavigationProperty Name="estatus" Relationship="AppSamModel.FK_talla_estatus" FromRole="talla" ToRole="estatus" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_talla_usuarios" FromRole="talla" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="tipo">
+          <Key>
+            <PropertyRef Name="TipoId" />
+          </Key>
+          <Property Name="TipoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <Property Name="usuarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="catalogo" Relationship="AppSamModel.FK_catalogo_tipo" FromRole="tipo" ToRole="catalogo" />
+          <NavigationProperty Name="catalogobitacora" Relationship="AppSamModel.FK_catalogobitacora_tipo" FromRole="tipo" ToRole="catalogobitacora" />
+          <NavigationProperty Name="estatus" Relationship="AppSamModel.FK_tipo_estatus" FromRole="tipo" ToRole="estatus" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_tipo_usuarios" FromRole="tipo" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="UsuarioAcceso">
+          <Key>
+            <PropertyRef Name="UsuarioAccesoId" />
+          </Key>
+          <Property Name="UsuarioAccesoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioTokenId" Type="Int32" Nullable="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HoraIngreso" Type="Time" Nullable="false" Precision="0" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_UsuarioAcceso_usuarios" FromRole="UsuarioAcceso" ToRole="usuarios" />
+          <NavigationProperty Name="UsuarioToken" Relationship="AppSamModel.FK_UsuarioAcceso_UsuarioToken" FromRole="UsuarioAcceso" ToRole="UsuarioToken" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="usuariosId" />
+          </Key>
+          <Property Name="usuariosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Paterno" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Materno" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="llave" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pass" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="catalogo" Relationship="AppSamModel.FK_catalogo_usuarios" FromRole="usuarios" ToRole="catalogo" />
+          <NavigationProperty Name="catalogobitacora" Relationship="AppSamModel.FK_catalogobitacora_usuarios" FromRole="usuarios" ToRole="catalogobitacora" />
+          <NavigationProperty Name="colores" Relationship="AppSamModel.FK_colores_usuarios" FromRole="usuarios" ToRole="colores" />
+          <NavigationProperty Name="estatus" Relationship="AppSamModel.FK_usuarios_estatus" FromRole="usuarios" ToRole="estatus" />
+          <NavigationProperty Name="estatus1" Relationship="AppSamModel.FK_usuarios_estatus1" FromRole="usuarios" ToRole="estatus" />
+          <NavigationProperty Name="modelos" Relationship="AppSamModel.FK_modelos_usuarios" FromRole="usuarios" ToRole="modelos" />
+          <NavigationProperty Name="talla" Relationship="AppSamModel.FK_talla_usuarios" FromRole="usuarios" ToRole="talla" />
+          <NavigationProperty Name="tipo" Relationship="AppSamModel.FK_tipo_usuarios" FromRole="usuarios" ToRole="tipo" />
+          <NavigationProperty Name="UsuarioAcceso" Relationship="AppSamModel.FK_UsuarioAcceso_usuarios" FromRole="usuarios" ToRole="UsuarioAcceso" />
+          <NavigationProperty Name="UsuariosPantallas" Relationship="AppSamModel.FK_UsuariosPantallas_usuarios" FromRole="usuarios" ToRole="UsuariosPantallas" />
+          <NavigationProperty Name="UsuarioToken" Relationship="AppSamModel.FK_UsuarioToken_usuarios" FromRole="usuarios" ToRole="UsuarioToken" />
+        </EntityType>
+        <EntityType Name="UsuariosPantallas">
+          <Key>
+            <PropertyRef Name="UsuarioPantallaId" />
+          </Key>
+          <Property Name="UsuarioPantallaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="PantallaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pantallas" Relationship="AppSamModel.FK_UsuariosPantallas_Pantallas" FromRole="UsuariosPantallas" ToRole="Pantallas" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_UsuariosPantallas_usuarios" FromRole="UsuariosPantallas" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="UsuarioToken">
+          <Key>
+            <PropertyRef Name="UsuarioTokenId" />
+          </Key>
+          <Property Name="UsuarioTokenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Token" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EstatusId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="estatus" Relationship="AppSamModel.FK_UsuarioToken_estatus" FromRole="UsuarioToken" ToRole="estatus" />
+          <NavigationProperty Name="UsuarioAcceso" Relationship="AppSamModel.FK_UsuarioAcceso_UsuarioToken" FromRole="UsuarioToken" ToRole="UsuarioAcceso" />
+          <NavigationProperty Name="usuarios" Relationship="AppSamModel.FK_UsuarioToken_usuarios" FromRole="UsuarioToken" ToRole="usuarios" />
+        </EntityType>
+        <Association Name="FK_catalogo_colores">
+          <End Type="AppSamModel.colores" Role="colores" Multiplicity="1" />
+          <End Type="AppSamModel.catalogo" Role="catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colores">
+              <PropertyRef Name="ColoresId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="ColoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_estatus">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.catalogo" Role="catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_modelos">
+          <End Type="AppSamModel.modelos" Role="modelos" Multiplicity="1" />
+          <End Type="AppSamModel.catalogo" Role="catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelos">
+              <PropertyRef Name="ModelosId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="ModelosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_talla">
+          <End Type="AppSamModel.talla" Role="talla" Multiplicity="1" />
+          <End Type="AppSamModel.catalogo" Role="catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="talla">
+              <PropertyRef Name="TallaId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_tipo">
+          <End Type="AppSamModel.tipo" Role="tipo" Multiplicity="1" />
+          <End Type="AppSamModel.catalogo" Role="catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="TipoId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="TipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogo_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.catalogo" Role="catalogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="catalogo">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_colores">
+          <End Type="AppSamModel.colores" Role="colores" Multiplicity="1" />
+          <End Type="AppSamModel.catalogobitacora" Role="catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colores">
+              <PropertyRef Name="ColoresId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_estatus">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.catalogobitacora" Role="catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_modelos">
+          <End Type="AppSamModel.modelos" Role="modelos" Multiplicity="1" />
+          <End Type="AppSamModel.catalogobitacora" Role="catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelos">
+              <PropertyRef Name="ModelosId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="ModelosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_talla">
+          <End Type="AppSamModel.talla" Role="talla" Multiplicity="1" />
+          <End Type="AppSamModel.catalogobitacora" Role="catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="talla">
+              <PropertyRef Name="TallaId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="TallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_tipo">
+          <End Type="AppSamModel.tipo" Role="tipo" Multiplicity="1" />
+          <End Type="AppSamModel.catalogobitacora" Role="catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="TipoId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="TipoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_catalogobitacora_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.catalogobitacora" Role="catalogobitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="catalogobitacora">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_colores_estatus">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.colores" Role="colores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="colores">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_colores_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.colores" Role="colores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="colores">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_modelos_estatus">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.modelos" Role="modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="modelos">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_talla_estatus">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.talla" Role="talla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="talla">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tipo_estatus">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.tipo" Role="tipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="tipo">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarios_estatus">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarios_estatus1">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioToken_estatus">
+          <End Type="AppSamModel.estatus" Role="estatus" Multiplicity="1" />
+          <End Type="AppSamModel.UsuarioToken" Role="UsuarioToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="EstatusId" />
+            </Principal>
+            <Dependent Role="UsuarioToken">
+              <PropertyRef Name="EstatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pantallas_MenuTitulo">
+          <End Type="AppSamModel.MenuTitulo" Role="MenuTitulo" Multiplicity="1" />
+          <End Type="AppSamModel.Pantallas" Role="Pantallas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuTitulo">
+              <PropertyRef Name="MenuTituloId" />
+            </Principal>
+            <Dependent Role="Pantallas">
+              <PropertyRef Name="MenuTituloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_modelos_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.modelos" Role="modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="modelos">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuariosPantallas_Pantallas">
+          <End Type="AppSamModel.Pantallas" Role="Pantallas" Multiplicity="1" />
+          <End Type="AppSamModel.UsuariosPantallas" Role="UsuariosPantallas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pantallas">
+              <PropertyRef Name="PantallaId" />
+            </Principal>
+            <Dependent Role="UsuariosPantallas">
+              <PropertyRef Name="PantallaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_talla_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.talla" Role="talla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="talla">
+              <PropertyRef Name="usuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tipo_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.tipo" Role="tipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="tipo">
+              <PropertyRef Name="usuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAcceso_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.UsuarioAcceso" Role="UsuarioAcceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="UsuarioAcceso">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioAcceso_UsuarioToken">
+          <End Type="AppSamModel.UsuarioToken" Role="UsuarioToken" Multiplicity="1" />
+          <End Type="AppSamModel.UsuarioAcceso" Role="UsuarioAcceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsuarioToken">
+              <PropertyRef Name="UsuarioTokenId" />
+            </Principal>
+            <Dependent Role="UsuarioAcceso">
+              <PropertyRef Name="UsuarioTokenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuariosPantallas_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.UsuariosPantallas" Role="UsuariosPantallas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="UsuariosPantallas">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioToken_usuarios">
+          <End Type="AppSamModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="AppSamModel.UsuarioToken" Role="UsuarioToken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="usuariosId" />
+            </Principal>
+            <Dependent Role="UsuarioToken">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AppSamModelStoreContainer" CdmEntityContainer="AppSamEntities">
+          <EntitySetMapping Name="catalogo">
+            <EntityTypeMapping TypeName="AppSamModel.catalogo">
+              <MappingFragment StoreEntitySet="catalogo">
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Docenas" ColumnName="Docenas" />
+                <ScalarProperty Name="ColoId" ColumnName="ColoId" />
+                <ScalarProperty Name="TipoId" ColumnName="TipoId" />
+                <ScalarProperty Name="TallaId" ColumnName="TallaId" />
+                <ScalarProperty Name="ModelosId" ColumnName="ModelosId" />
+                <ScalarProperty Name="CatalogoId" ColumnName="CatalogoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catalogobitacora">
+            <EntityTypeMapping TypeName="AppSamModel.catalogobitacora">
+              <MappingFragment StoreEntitySet="catalogobitacora">
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Docenas" ColumnName="Docenas" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="TipoId" ColumnName="TipoId" />
+                <ScalarProperty Name="TallaId" ColumnName="TallaId" />
+                <ScalarProperty Name="ModelosId" ColumnName="ModelosId" />
+                <ScalarProperty Name="CatalogoBitacoraId" ColumnName="CatalogoBitacoraId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="colores">
+            <EntityTypeMapping TypeName="AppSamModel.colores">
+              <MappingFragment StoreEntitySet="colores">
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="ColoresId" ColumnName="ColoresId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estatus">
+            <EntityTypeMapping TypeName="AppSamModel.estatus">
+              <MappingFragment StoreEntitySet="estatus">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuTitulo">
+            <EntityTypeMapping TypeName="AppSamModel.MenuTitulo">
+              <MappingFragment StoreEntitySet="MenuTitulo">
+                <ScalarProperty Name="Icono" ColumnName="Icono" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="MenuTituloId" ColumnName="MenuTituloId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modelos">
+            <EntityTypeMapping TypeName="AppSamModel.modelos">
+              <MappingFragment StoreEntitySet="modelos">
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="ModelosId" ColumnName="ModelosId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pantallas">
+            <EntityTypeMapping TypeName="AppSamModel.Pantallas">
+              <MappingFragment StoreEntitySet="Pantallas">
+                <ScalarProperty Name="Icono" ColumnName="Icono" />
+                <ScalarProperty Name="DireccionPantalla" ColumnName="DireccionPantalla" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="MenuTituloId" ColumnName="MenuTituloId" />
+                <ScalarProperty Name="PantallaId" ColumnName="PantallaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="talla">
+            <EntityTypeMapping TypeName="AppSamModel.talla">
+              <MappingFragment StoreEntitySet="talla">
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="TallaId" ColumnName="TallaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipo">
+            <EntityTypeMapping TypeName="AppSamModel.tipo">
+              <MappingFragment StoreEntitySet="tipo">
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="TipoId" ColumnName="TipoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioAcceso">
+            <EntityTypeMapping TypeName="AppSamModel.UsuarioAcceso">
+              <MappingFragment StoreEntitySet="UsuarioAcceso">
+                <ScalarProperty Name="HoraIngreso" ColumnName="HoraIngreso" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="UsuarioTokenId" ColumnName="UsuarioTokenId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="UsuarioAccesoId" ColumnName="UsuarioAccesoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="AppSamModel.usuarios">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="llave" ColumnName="llave" />
+                <ScalarProperty Name="Materno" ColumnName="Materno" />
+                <ScalarProperty Name="Paterno" ColumnName="Paterno" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="usuariosId" ColumnName="usuariosId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuariosPantallas">
+            <EntityTypeMapping TypeName="AppSamModel.UsuariosPantallas">
+              <MappingFragment StoreEntitySet="UsuariosPantallas">
+                <ScalarProperty Name="PantallaId" ColumnName="PantallaId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="UsuarioPantallaId" ColumnName="UsuarioPantallaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioToken">
+            <EntityTypeMapping TypeName="AppSamModel.UsuarioToken">
+              <MappingFragment StoreEntitySet="UsuarioToken">
+                <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="UsuarioTokenId" ColumnName="UsuarioTokenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
